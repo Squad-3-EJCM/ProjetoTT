@@ -1,0 +1,9 @@
+back/.env
+back/node_modules/
+back/.DS_Store
+back/*.sqlite
+back/*.png
+back/*.jpg
+back/.env
+back/.idea
+back/id_rsa_priv.pem
