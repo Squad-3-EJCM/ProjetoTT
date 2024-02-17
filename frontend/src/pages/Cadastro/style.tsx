@@ -79,3 +79,4 @@ export const BotaoTexto2 = styled.Text`
     font-size: 18px;
     font-style: 'normal';
 `;
+
