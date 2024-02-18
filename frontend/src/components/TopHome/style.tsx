@@ -1,4 +1,9 @@
 import { StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+
+export const TopHome = styled.View `
+`;
+
 export const styles = StyleSheet.create({
     container:{
         display: 'flex',

@@ -9,7 +9,7 @@ type Info = {
     GameUrl: string;
 };
 
-const TopHome = ({GameUrl, Name, Price}: Info) =>{
+export default function TopHome({GameUrl, Name, Price}: Info) {
     return(
         <View style={styles.container}>
             <Image source={require(GameUrl)} style={styles.jogo}/>
@@ -18,5 +18,3 @@ const TopHome = ({GameUrl, Name, Price}: Info) =>{
         </View>
     );
 };
-
-export default TopHome;

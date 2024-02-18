@@ -1,23 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import {Image, Text, View, TextInput, Pressable } from 'react-native';
-import {styles} from './style';
+import { Botao2, BotaoTexto2, Container, Container2, Email, Input, Logo, Senha } from '../Cadastro/style';
+import { Botao, BotaoTexto, TextoVisitante } from './style';
+import { Pressable } from 'react-native';
 
 export default function Login() {
   return (
-    <View style={styles.container}>
-        <Image source={require("../../assets/Logo.png")} style={styles.logo}/>
-        <View style={styles.container2}>
-            <Image source={require("../../assets/email.png")} style={styles.email}/>
-            <TextInput placeholder='E-mail' style={styles.input}/>
-        </View>
-        <View style={styles.container2}>
-            <Image source={require("../../assets/cadeado.png")} style={styles.senha}/>
-            <TextInput placeholder='Senha' style={styles.input}/>
-        </View>
-        <Pressable style={styles.botao}><Text style={styles.botaoTexto}>Login</Text></Pressable>
-        <Pressable style={styles.botao2}><Text style={styles.botaoTexto2}>Cadastrar-se</Text></Pressable>
-        <Pressable style={styles.visitante}><Text style={styles.textoVisitante}>Entrar como visitante</Text></Pressable>
-        
-    </View>
+    <Container>
+      <Logo source={require("../../assets/Logo.png")}/>
+
+      <Container2>
+          <Email source={require("../../assets/email.png")}/>
+          <Input placeholder='E-mail'/>
+      </Container2>
+
+      <Container2>
+          <Senha source={require("../../assets/cadeado.png")}/>
+          <Input placeholder='Senha'/>
+      </Container2>
+
+      <Botao>
+        <BotaoTexto>Login</BotaoTexto>
+      </Botao>
+
+      <Botao2>
+        <BotaoTexto2>Cadastrar-se</BotaoTexto2>
+      </Botao2>
+
+      <Pressable>
+        <TextoVisitante>Entrar como visitante</TextoVisitante>
+      </Pressable>
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import {Image, Text, View, TextInput, Pressable} from 'react-native';
 import {styles} from './style';
-import ProdutHome from "../../component/ProdutHome";
+import ProdutHome from "../../components/ProdutHome";
 
 
 export default function Home(){

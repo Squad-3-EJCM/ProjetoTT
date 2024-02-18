@@ -1,19 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import {Image, Text, View, TextInput, Pressable} from 'react-native';
-import {styles} from './style';
+import React from "react";
+import { Pressable } from "react-native";
+import { BotaoTexto2, Container, Container2, Logo, Title, Message, Botao2 } from "./style";
 
 export default function ConfirmarEmail(){
     return(
-        <View style={styles.container}>
-            <Image source={require("../../assets/Logo.png")} style={styles.logo}/>
-            <View style={styles.container2}>
-                <Text style={styles.title}>Verifique seu E-mail</Text>
-                <Text style={styles.mensage}>Para continuar, confirme seu email apertando no botão abaixo</Text>
-            </View>
+        <Container>
+            <Logo source={require("../../assets/Logo.png")}/>
 
-            
-            <Pressable style={styles.botao2}><Text style={styles.botaoTexto2}>Confirme seu Email</Text></Pressable>
-            
-        </View>
+            <Container2>
+                <Title>Verifique seu E-mail</Title>
+                <Message>Para continuar, confirme seu email apertando no botão abaixo</Message>
+            </Container2>
+
+            <Botao2><BotaoTexto2>Confirme seu Email</BotaoTexto2></Botao2>
+        </Container>
     );
 }
