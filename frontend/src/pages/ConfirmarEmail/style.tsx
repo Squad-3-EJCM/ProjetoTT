@@ -1,61 +1,60 @@
-import { StyleSheet} from 'react-native';
-export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#0E0D0E',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    
-      logo:{
-        width: 323,
-        height: 110,
-        marginBottom: 70,
-      },
+import styled from 'styled-components/native';
+import { global } from '../../globalStyle';
 
-      container2:{
-        width: 312,
-        height: 110,
-        borderRadius: 15,
-        backgroundColor: '#7122EE',
-        marginBottom: 50,
-        gap: 10,
-      },
-    
-      title:{
-        marginTop: 10,
-        fontFamily: 'ChakraPetch-Bold',
-        fontWeight: 'bold',
-        fontSize: 22,
-        color: '#F1F1E6',
-        marginLeft: 5,
-        marginRight: 5,
-      },
+export const Container = styled.View`
+  flex: 1;
+  background-color: ${global.colors.black};
+  align-items: center;
+  justify-content: center;
+`;
 
-      mensage:{
-        marginLeft: 5,
-        marginRight: 5,
-        fontFamily:'Chakra Petch',
-        fontSize: 16,
-        color: '#FFFFFF',
-      },
-    
-      botao2:{
-        backgroundColor: '#DEFA63',
-        width: 276,
-        height: 42,
-        justifyContent: 'center',
-        alignItems:'center',
-        borderRadius: 15,
-        marginBottom: 40,
-      },
-    
-      botaoTexto2:{
-        color: '#0E0D0E',
-        alignSelf: 'center',
-        fontFamily: 'CHAKRA PETCH',
-        fontSize: 18,
-        fontStyle: 'normal',
-      },
-  
-})
+export const Logo = styled.Image`
+  width: 323px;
+  height: 110px;
+  margin-bottom: 70px;
+`;
+
+export const Container2 = styled.View `
+  width: 312px;
+  height: 110px;
+  border-radius: 15px;
+  background-color: ${global.colors.purple};
+  margin-bottom: 50px;
+  gap: 10px;
+`;
+
+export const Title = styled.Text`
+  margin-top: 10px;
+  font-family: 'ChakraPetch-Bold';
+  font-weight: bold;
+  font-size: 22px;
+  color: ${global.colors.gray};
+  margin-left: 5px;
+  margin-right: 5px; 
+`;
+
+export const Message = styled.Text `
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family:'Chakra Petch';
+  font-size: 16px;
+  color: ${global.colors.white};
+`;
+
+export const Botao2 = styled.Pressable`
+  background-color: ${global.colors.green};
+  width: 276px;
+  height: 42px;
+  justify-content: center;
+  align-items:center;
+  border-radius: 15px;
+  margin-bottom: 40px; 
+`;
+
+export const BotaoTexto2 = styled.Text`
+  color: ${global.colors.black};
+  align-self: center;
+  font-family: 'CHAKRA PETCH';
+  font-size: 18px;
+  font-style: normal;
+`;

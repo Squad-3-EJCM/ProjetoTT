@@ -1,22 +1,15 @@
 
-import React from 'react';
-import { View, Image, Text } from 'react-native/types';
-import {styles} from './style';
+import {ContainerTopHome, FotodePerfil, Lupa, Menu, Pesquisa, Search} from './style';
 
-type Info = {
-    Price: string;
-    Name: string;
-    GameUrl: string;
-};
-
-const TopHome = ({GameUrl, Name, Price}: Info) =>{
+export default function TopHome() {
     return(
-        <View style={styles.container}>
-            <Image source={require(GameUrl)} style={styles.jogo}/>
-            <Text style={styles.nome}>{Name}</Text>
-            <Text style={styles.preco}>{Price}</Text>
-        </View>
+        <ContainerTopHome>
+            <Menu source={require("../../assets/Menu.png")}/>
+            <Search>
+                <Pesquisa placeholder='Pesquisar'></Pesquisa>
+                <Lupa source={require("../../assets/Vector.png")}/>
+            </Search>
+            <FotodePerfil source={require("../../assets/Foto de perfil.png")}/>
+        </ContainerTopHome>
     );
 };
-
-export default TopHome;

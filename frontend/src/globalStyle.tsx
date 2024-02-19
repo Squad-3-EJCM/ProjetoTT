@@ -4,9 +4,7 @@ export const global = {
         azul: '#45497C',
         purple: '#7122EE',
         green: '#DEFA63',
-        gray: '#F1F1E6'
-    },
-    fonts: {
-        
+        gray: '#F1F1E6',
+        white: '#FFFFFF'
     }
 }
