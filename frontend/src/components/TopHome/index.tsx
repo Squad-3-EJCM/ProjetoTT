@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { View, Image, Text } from 'react-native/types';
 import {ContainerTopHome, FotodePerfil, Lupa, Menu, Pesquisa, Search} from './style';
 
 export default function TopHome() {
