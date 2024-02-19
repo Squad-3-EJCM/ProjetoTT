@@ -1,5 +1,4 @@
 import React from "react";
-import { Pressable } from "react-native";
 import { BotaoTexto2, Container, Container2, Logo, Title, Message, Botao2 } from "./style";
 
 export default function ConfirmarEmail(){
