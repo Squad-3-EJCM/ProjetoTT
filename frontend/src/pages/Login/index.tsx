@@ -1,23 +1,69 @@
-import { Botao2, BotaoTexto2, Container, Container2, Email, Input, Logo, Senha } from '../Cadastro/style';
-import { Botao, BotaoTexto, TextoVisitante } from './style';
+import { Botao2, BotaoTexto2, Email, Input, Logo, Senha } from '../Cadastro/style';
+import { Botao, BotaoTexto, ContainerLogin,ContainerLogin2, TextoVisitante } from './style';
 import { Pressable } from 'react-native';
+import {useForm, Controller} from 'react-hook-form';
+
+interface FormData{
+  email: string;
+  senha: string;
+}
 
 export default function Login() {
+
+
+  const {control, handleSubmit} = useForm<FormData>();
+  const onSubmit = (data: FormData) => {
+    console.log(data)
+  }
+
   return (
-    <Container>
+    <ContainerLogin>
       <Logo source={require("../../assets/Logo.png")}/>
 
-      <Container2>
-          <Email source={require("../../assets/email.png")}/>
-          <Input placeholder='E-mail'/>
-      </Container2>
+      <ContainerLogin2>
+        <Email source={require("../../assets/email.png")}/>
+        <Controller
+          control={control}
+          name = 'email'
+          render = {({field: {onBlur, onChange, value}}) => (
+            <Input 
+              onBlur={onBlur}
+              onChangeText={(value) => onChange(value)}
+              value = {value}
+              placeholder='E-mail' 
+            />
+          )}
+          rules={{
+            required: 'o email é obrigatório',
+            maxLength: 90,
+          }}
+          defaultValue=''
+        />  
+      </ContainerLogin2>
 
-      <Container2>
+      <ContainerLogin2>
           <Senha source={require("../../assets/cadeado.png")}/>
-          <Input placeholder='Senha'/>
-      </Container2>
+          <Controller
+            control={control}
+            name = 'senha'
+            render = {({field: {onBlur, onChange, value}}) => (
+              <Input 
+                onBlur={onBlur}
+                onChangeText={(value) => onChange(value)}
+                value = {value}
+                placeholder='Senha' 
+              />
+            )}
+            rules={{
+              required: 'a senha é obrigatória',
+              minLength: 8,
 
-      <Botao>
+            }}
+            defaultValue=''
+          /> 
+      </ContainerLogin2>
+
+      <Botao onPress={handleSubmit(onSubmit)}>
         <BotaoTexto>Login</BotaoTexto>
       </Botao>
 
@@ -28,6 +74,7 @@ export default function Login() {
       <Pressable>
         <TextoVisitante>Entrar como visitante</TextoVisitante>
       </Pressable>
-    </Container>
+    </ContainerLogin>
   );
 }
+ 

@@ -8,7 +8,7 @@ export const ContainerCadastro = styled.View `
     align-items: center;
     justify-content: center;
 `;
-
+ 
 export const Logo = styled.Image`
     width: 323px;
     height: 110px;
@@ -43,6 +43,7 @@ export const Input = styled.TextInput`
     padding: 5px;
     outline-color: ${global.colors.black};
     border-width: 0;
+    font-family: 'Chakra-Regular';
 `;
 
 export const Botao2 = styled.Pressable `
