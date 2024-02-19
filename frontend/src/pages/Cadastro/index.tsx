@@ -1,7 +1,6 @@
 import { Botao2, BotaoTexto2, CheckboxText, ContainerCadastro, ContainerCadastro2, ContainerCadastro3, Email, Input, Logo, Senha } from './style';
 import {useFonts} from 'expo-font'
 import CheckBox from '../../components/Checkbox';
-import React from 'react';
 import {useForm, Controller} from 'react-hook-form';
 
 interface FormData{
