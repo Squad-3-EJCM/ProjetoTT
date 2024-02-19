@@ -1,5 +1,4 @@
 
-import React from 'react';
 import {ContainerTopHome, FotodePerfil, Lupa, Menu, Pesquisa, Search} from './style';
 
 export default function TopHome() {
