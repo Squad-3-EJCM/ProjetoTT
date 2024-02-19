@@ -1,40 +1,42 @@
 import { StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
-export const TopHome = styled.View `
+export const ContainerTopHome = styled.View `
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
 `;
 
-export const styles = StyleSheet.create({
-    container:{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent:'center',
-        alignItems: 'center',
-        width: 115,
-        height: 143,
-        borderRadius: 5,
-        backgroundColor: '#7122EE',
-    },
+export const Menu = styled.Image`
+    width: 24px;
+    height: 24px;
+`;
 
-    jogo:{
-        width:80,
-        height: 90,
-        borderColor: '#0E0D0E',
-    },
+export const Search = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #DEFA63;
+`;
 
-    nome:{
-        fontFamily: 'Chakra Petch',
-        fontSize: 15,
-        fontWeight: '500',
-        alignSelf: 'center',
-        color: '#F1F1E6',
-    },
+export const Pesquisa = styled.TextInput`
+    width:235px;
+    height: 35px;
+    border-radius: 20px;
+    margin-left: 10px;
+`;
 
-    preco:{
-        fontFamily: 'Chakra Petch',
-        fontSize: 14,
-        fontWeight: '500',
-        alignSelf: 'center',
-        color: '#F1F1E6',
-    }
-})
+export const Lupa = styled.Image`
+    width:24px;
+    height:25px;
+    margin-right: 10px;   
+`;
+
+export const FotodePerfil = styled.Image`
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+`;
+

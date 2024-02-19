@@ -12,7 +12,7 @@ interface FormData{
 
 export default function Cadastro() {
 
-  const {control, handleSubmit} = useForm<FormData>();
+  const {control, handleSubmit, getValues} = useForm<FormData>();
   const onSubmit = (data: FormData) => {
     console.log(data)
   }
@@ -80,12 +80,12 @@ export default function Cadastro() {
               />
             )}
             rules={{
-              /*validate:{
+              validate:{
                 matchesPreviusPassword: (value) => {
                   const {senha} = getValues();
-                  return senha === value || 'senha diferente'
+                  return senha === value || 'senha diferente';
                 }
-              },*/
+              },
               required: 'a senha é obrigatória',
               minLength: 8,
 
@@ -106,7 +106,5 @@ export default function Cadastro() {
       </ContainerCadastro>
     );
 }
-function getValues(): { senha: string; } {
-  throw new Error('Function not implemented.');
-}
+
 
