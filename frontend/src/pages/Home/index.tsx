@@ -1,4 +1,3 @@
-import {Image, Text, View, TextInput, Pressable} from 'react-native';
 import {BottomPage, ContainerHome, MidPage, TopPage, Products, BottomText, LogoMenor} from './style';
 import ProdutHome from "../../components/ProductHome";
 import TopHome from '../../components/TopHome';
