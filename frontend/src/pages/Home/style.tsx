@@ -1,11 +1,14 @@
 import styled from 'styled-components/native';
 import { global } from '../../globalStyle';
+import { FlatList } from 'react-native';
 
 export const ContainerHome = styled.View`
     display: flex;
     flex: 1;
     flex-direction: column;
     background-color: ${global.colors.black};
+    align-items: center;
+    width: 100%;
 `;
 
 export const TopPage = styled.View`
@@ -48,3 +51,6 @@ export const LogoMenor = styled.Image`
     
 `;
 
+export const GameList = (styled.FlatList`
+    width: 370px;
+` as unknown) as typeof FlatList;

@@ -1,7 +1,7 @@
 
 import { ProductHomeContainer ,ProductHomeJogo, ProductHomeNome, ProductHomePreco } from './style';
 
-type Info = {
+export type Info = {
     Price: string;
     Name: string;
     GameUrl: string;
@@ -10,7 +10,7 @@ type Info = {
 export default function ProductHome({GameUrl, Name, Price}: Info){
     return(
         <ProductHomeContainer>
-            <ProductHomeJogo source={require("../../assets/" + GameUrl)}/>
+            <ProductHomeJogo source={require(`../../assets/gta.jpg`)}/>
             <ProductHomeNome>{Name}</ProductHomeNome>
             <ProductHomePreco>R${Price}</ProductHomePreco>
         </ProductHomeContainer>

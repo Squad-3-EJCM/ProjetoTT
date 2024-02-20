@@ -4,7 +4,8 @@ export const ContainerTopHome = styled.View `
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
+    width: 100%;
 `;
 
 export const Menu = styled.Image`

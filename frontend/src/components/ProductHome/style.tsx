@@ -7,9 +7,10 @@ export const ProductHomeContainer = styled.View `
   justify-content: center;
   align-items: center;
   width: 115px;
-  height: 143px;
+  // height: 143px;
   border-radius: 5px;
   background-color: ${global.colors.purple};
+  margin-bottom: 30px;
 `;
 
 export const ProductHomeJogo = styled.Image`
