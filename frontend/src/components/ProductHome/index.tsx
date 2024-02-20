@@ -1,7 +1,7 @@
 
 import { ProductHomeContainer ,ProductHomeJogo, ProductHomeNome, ProductHomePreco } from './style';
 
-type Info = {
+export type Info = {
     Price: string;
     Name: string;
     GameUrl: string;

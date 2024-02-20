@@ -1,9 +1,21 @@
-import {BottomPage, ContainerHome, MidPage, TopPage, Products, BottomText, LogoMenor} from './style';
-import ProdutHome from "../../components/ProductHome";
+import {BottomPage, ContainerHome, GameList,  MidPage, TopPage, Products, BottomText, LogoMenor} from './style';
+import ProdutHome, { Info } from "../../components/ProductHome";
 import TopHome from '../../components/TopHome';
 import React from 'react';
+import { ListRenderItem } from 'react-native';
 
 export default function Home(){
+    const infoArray: Array<Info> = [
+        {GameUrl: 'gta.jpg', Name: 'GTA I', Price: '50,00'},
+        {GameUrl: 'sonic.jpg', Name: 'Sonic 2', Price: '50,00'},
+        {GameUrl: 'pes97.jpg', Name: 'Pes 97', Price: '50,00'},
+        {GameUrl: 'black.jpg', Name: 'Black', Price: '50,00'},
+        {GameUrl: 'mk2.jpg', Name: 'Mortal Kombat II', Price: '50,00'}
+    ]
+
+    const renderItem: ListRenderItem<Info> = ({item: {GameUrl, Name, Price}}) => (
+        <ProdutHome GameUrl={GameUrl} Name={Name} Price={Price}/>
+    )
     return(
         <ContainerHome>
             <TopPage>
@@ -11,6 +23,8 @@ export default function Home(){
             </TopPage>
 
             <MidPage>
+                <GameList data={infoArray} numColumns={2}
+                renderItem={renderItem}/>
                 <Products>
                     <ProdutHome GameUrl={"gta.jpg"} Name={"GTA I"} Price={"50,00"}/>
                     <ProdutHome GameUrl={"sonic.jpg"} Name={"Sonic 2"} Price={"37,00"}/>
