@@ -2,6 +2,7 @@ import {useFonts} from 'expo-font';
 import { Text } from 'react-native';
 
 import Cadastro from './src/pages/Cadastro';
+import Carrinho from './src/pages/Carrinho';
 import ConfirmarEmail from './src/pages/ConfirmarEmail';
 import EmailConfirmado from './src/pages/EmailConfirmado';
 import Home from './src/pages/Home';
@@ -18,6 +19,6 @@ export default function App() {
 
 
   return (
-    <Perfil/>
+    <Carrinho/>
   );
 }
