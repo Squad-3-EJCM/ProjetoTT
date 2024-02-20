@@ -6,6 +6,7 @@ import ConfirmarEmail from './src/pages/ConfirmarEmail';
 import EmailConfirmado from './src/pages/EmailConfirmado';
 import Home from './src/pages/Home';
 import Login from './src/pages/Login';
+import Perfil from './src/pages/Perfil';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,6 +18,6 @@ export default function App() {
 
 
   return (
-    <Home/>
+    <Perfil/>
   );
 }
