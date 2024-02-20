@@ -16,3 +16,27 @@ model User {
   password    String     @db.VarChar(75)
   moderator   Boolean    @default(false)
 }
+
+model Post {
+  postId Int @id @default(autoincrement())
+  description String 
+  image String
+  title String
+  value String
+  postDate DateTime
+  publish User @relation(fields: [publishId],references: [postId])
+  publishId Int
+  addToCart User[]
+  fivorite User[]
+  edit User[]
+  commenting Comment []
+}
+
+model Comment{
+  commentId Int @id @default(autoincrement())
+  postDate DateTime
+  commentate User @relation(fields: [commentRelationId],references: [commentId])
+  commenting Post @relation(fields: [commentRelationId],references: [commentId])
+  commentRelationId Int
+
+}
