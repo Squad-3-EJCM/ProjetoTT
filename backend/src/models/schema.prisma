@@ -17,6 +17,7 @@ model User {
   moderator   Boolean    @default(false)
   posts       Post[]
   cart        AddToCart[]
+  favorites   AddToFavorites[]
 }
 
 model Post {
@@ -29,7 +30,7 @@ model Post {
   publisher User @relation(fields: [publisherId],references: [username])
   publisherId String
   cartPost AddToCart[]
-  favorite User[]
+  favoritePost AddToFavorites[]
   edit User[]
   commentting Comment[]
 }
@@ -43,6 +44,14 @@ model Comment{
 }
 
 model AddToCart {
+  id Int @id @default(autoincrement())
+  addedBy User @relation(fields: [userId],references: [username])
+  userId String @unique
+  addedPost Post @relation(fields: [addedPostId],references: [postId])
+  addedPostId Int @unique
+}
+
+model AddToFavorites {
   id Int @id @default(autoincrement())
   addedBy User @relation(fields: [userId],references: [username])
   userId String @unique
