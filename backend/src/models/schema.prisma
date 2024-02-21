@@ -32,7 +32,6 @@ model Post {
   publisherId String
   cartPost AddToCart[]
   favoritePost AddToFavorites[]
-  edit User[]
   commentting Comment[]
 }
 
