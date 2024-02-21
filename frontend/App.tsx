@@ -8,7 +8,9 @@ import EmailConfirmado from './src/pages/EmailConfirmado';
 import Favoritos from './src/pages/Favoritos';
 import Home from './src/pages/Home';
 import Login from './src/pages/Login';
+import NewPost from './src/pages/NewPost';
 import Perfil from './src/pages/Perfil';
+import Posts from './src/pages/Posts';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,6 +22,6 @@ export default function App() {
 
 
   return (
-    <Favoritos/>
+    <NewPost/>
   );
 }
