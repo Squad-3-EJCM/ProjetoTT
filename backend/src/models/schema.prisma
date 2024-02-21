@@ -35,8 +35,7 @@ model Post {
 model Comment{
   commentId Int @id @default(autoincrement())
   postDate DateTime
-  commentate User @relation(fields: [commentRelationId],references: [commentId])
-  commenting Post @relation(fields: [commentRelationId],references: [commentId])
+  commentter User @relation(fields: [commentRelationId],references: [username])
+  commenttedPost Post @relation(fields: [commentRelationId],references: [postId])
   commentRelationId Int
-
 }
