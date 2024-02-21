@@ -9,3 +9,53 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  username    String     @id     @db.VarChar(75)
+  email       String     @unique @db.VarChar(75)
+  password    String     @db.VarChar(75)
+  moderator   Boolean    @default(false)
+  posts       Post[]
+  cart        AddToCart[]
+  favorites   AddToFavorites[]
+  comments    Comment[]
+}
+
+model Post {
+  postId Int @id @default(autoincrement())
+  description String 
+  image String
+  title String
+  price Float
+  postDate DateTime
+  publisher User @relation(fields: [publisherId],references: [username])
+  publisherId String
+  cartPost AddToCart[]
+  favoritePost AddToFavorites[]
+  commentting Comment[]
+}
+
+model Comment {
+  commentId Int @id @default(autoincrement())
+  postDate DateTime
+  commentter User @relation(fields: [commentterId],references: [username])
+  commentterId String
+  commenttedPost Post @relation(fields: [commenttedPostId],references: [postId])
+  commenttedPostId Int
+}
+
+model AddToCart {
+  id Int @id @default(autoincrement())
+  addedBy User @relation(fields: [userId],references: [username])
+  userId String @unique
+  addedPost Post @relation(fields: [addedPostId],references: [postId])
+  addedPostId Int @unique
+}
+
+model AddToFavorites {
+  id Int @id @default(autoincrement())
+  addedBy User @relation(fields: [userId],references: [username])
+  userId String @unique
+  addedPost Post @relation(fields: [addedPostId],references: [postId])
+  addedPostId Int @unique
+}
