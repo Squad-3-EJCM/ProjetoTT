@@ -12,9 +12,9 @@ export default function CheckBox(){
         }}>
             {
                 checked ?
-                <CheckImage source={require('../../assets/check2.png')}/>
+                <CheckImage source={require('../../assets/check.png')}/>
                 :
-                <Checked source={require('../../assets/check.png')}/>
+                <Checked source={require('../../assets/check2.png')}/>
             }
         </Pressable>
     );
