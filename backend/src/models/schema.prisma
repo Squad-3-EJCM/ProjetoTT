@@ -16,6 +16,7 @@ model User {
   password    String     @db.VarChar(75)
   moderator   Boolean    @default(false)
   posts       Post[]
+  cart        AddToCart[]
 }
 
 model Post {
@@ -25,9 +26,9 @@ model Post {
   title String
   price String
   postDate DateTime
-  publish User @relation(fields: [publishId],references: [postId])
-  publishId Int
-  addToCart User[]
+  publisher User @relation(fields: [publisherId],references: [username])
+  publisherId String
+  cartPost AddToCart[]
   favorite User[]
   edit User[]
   commentting Comment[]
@@ -39,4 +40,12 @@ model Comment{
   commentter User @relation(fields: [commentRelationId],references: [username])
   commenttedPost Post @relation(fields: [commentRelationId],references: [postId])
   commentRelationId Int
+}
+
+model AddToCart {
+  id Int @id @default(autoincrement())
+  addedBy User @relation(fields: [userId],references: [username])
+  userId String @unique
+  addedPost Post @relation(fields: [addedPostId],references: [postId])
+  addedPostId Int @unique
 }
