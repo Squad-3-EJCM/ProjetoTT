@@ -15,6 +15,7 @@ model User {
   email       String     @unique @db.VarChar(75)
   password    String     @db.VarChar(75)
   moderator   Boolean    @default(false)
+  posts       Post[]
 }
 
 model Post {
