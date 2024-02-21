@@ -35,7 +35,7 @@ model Post {
   commentting Comment[]
 }
 
-model Comment{
+model Comment {
   commentId Int @id @default(autoincrement())
   postDate DateTime
   commentter User @relation(fields: [commentterId],references: [username])
