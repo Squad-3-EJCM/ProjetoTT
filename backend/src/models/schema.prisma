@@ -23,14 +23,14 @@ model Post {
   description String 
   image String
   title String
-  value String
+  price String
   postDate DateTime
   publish User @relation(fields: [publishId],references: [postId])
   publishId Int
   addToCart User[]
-  fivorite User[]
+  favorite User[]
   edit User[]
-  commenting Comment []
+  commentting Comment[]
 }
 
 model Comment{
