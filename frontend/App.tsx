@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 
 import Cadastro from './src/pages/Cadastro';
 import Carrinho from './src/pages/Carrinho';
+import Compras from './src/pages/Compras';
 import ConfirmarEmail from './src/pages/ConfirmarEmail';
 import EmailConfirmado from './src/pages/EmailConfirmado';
 import Favoritos from './src/pages/Favoritos';
@@ -22,6 +23,6 @@ export default function App() {
 
 
   return (
-    <NewPost/>
+    <Compras/>
   );
 }
