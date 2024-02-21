@@ -26,7 +26,7 @@ model Post {
   description String 
   image String
   title String
-  price String
+  price Float
   postDate DateTime
   publisher User @relation(fields: [publisherId],references: [username])
   publisherId String
