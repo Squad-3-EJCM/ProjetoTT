@@ -18,6 +18,7 @@ model User {
   posts       Post[]
   cart        AddToCart[]
   favorites   AddToFavorites[]
+  comments    Comment[]
 }
 
 model Post {
@@ -38,9 +39,10 @@ model Post {
 model Comment{
   commentId Int @id @default(autoincrement())
   postDate DateTime
-  commentter User @relation(fields: [commentRelationId],references: [username])
-  commenttedPost Post @relation(fields: [commentRelationId],references: [postId])
-  commentRelationId Int
+  commentter User @relation(fields: [commentterId],references: [username])
+  commentterId String
+  commenttedPost Post @relation(fields: [commenttedPostId],references: [postId])
+  commenttedPostId Int
 }
 
 model AddToCart {
