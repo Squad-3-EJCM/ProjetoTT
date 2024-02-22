@@ -1,13 +1,14 @@
+import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { global } from '../../globalStyle';
 
-export const ContainerHome = styled.View`
+export const ContainerHome = styled.ScrollView`
     display: flex;
     flex: 1;
     flex-direction: column;
     background-color: ${global.colors.black};
 `;
-
+ 
 export const TopPage = styled.View`
     margin-bottom: 20px;
 `;
@@ -17,6 +18,7 @@ export const MidPage = styled.View`
     flex-direction: column;
     gap: 30px;
     margin-bottom: 30px;
+    align-items: center;
 `;
 
 export const BottomPage = styled.View`
@@ -48,6 +50,6 @@ export const LogoMenor = styled.Image`
     
 `;
 
-export const GameList = styled.FlatList`
-    
-`;
+export const GameList = (styled.FlatList`
+    width: 370px;
+` as unknown) as typeof FlatList;
