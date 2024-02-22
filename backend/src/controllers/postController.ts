@@ -15,12 +15,9 @@ async function createPost(request:Request, response:Response) {
   }
 }
 
-async function readPost(request:Request, response:Response) {
-  const {id} = request.params;
+async function readPost(response:Response) {
   try {
-    const post = await prisma.post.findUnique(
-      {where: {id: Number(id)}}
-    )
+    const post = await prisma.post.findMany()
     response.status(200).json(post);
   }
   catch(error) {
