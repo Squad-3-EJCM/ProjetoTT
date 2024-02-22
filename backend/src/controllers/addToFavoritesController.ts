@@ -15,12 +15,9 @@ async function createFavorite(request:Request, response:Response) {
   }
 }
  
-async function readFavorite(request:Request, response:Response) {
-  const {id} = request.params;
+async function readFavorite(response:Response) {
   try {
-    const favorite = await prisma.favorite.findUnique(
-      {where: {id: Number(id)}}
-    )
+    const favorite = await prisma.favorite.findMany()
     response.status(200).json(favorite);
   }
   catch(error) {
