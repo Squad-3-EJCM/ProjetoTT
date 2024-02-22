@@ -48,3 +48,6 @@ export const LogoMenor = styled.Image`
     
 `;
 
+export const GameList = styled.FlatList`
+    
+`;
