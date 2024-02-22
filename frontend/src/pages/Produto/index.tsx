@@ -1,9 +1,12 @@
-import { BotProduto, Button1Text, Button2Text, Button3Text, ButtonView, CommentInput, CommentView, DescricaoView, Description, Line, MidProduto, ProdutoButton1, ProdutoButton2, ProdutoButton3, ProdutoContainer, ProdutoImg, Subtitle, TitleImag, TitleView, TitleViewTxt, TopProduto } from "./style";
+import { BotProduto, Button1Text, Button2Text, Button3Text, ButtonView, CommentInput, CommentView, DescricaoView, Description, Line, MidProduto, ModEdit, ProdutoButton1, ProdutoButton2, ProdutoButton3, ProdutoContainer, ProdutoImg, Subtitle, TitleImag, TitleView, TitleViewTxt, TopProduto } from "./style";
 import TopHome from "../../components/TopHome";
 import Comment from "../../components/Comments";
 import Heart from "../../components/Heart";
+import { ModContext } from "../../context/moderatorContext";
+import { useContext } from "react";
 
 export default function Produto(){
+    const {isMod} = useContext(ModContext);
     return(
         <ProdutoContainer>
             
@@ -17,7 +20,10 @@ export default function Produto(){
 
                     <TitleView>
                         <TitleViewTxt>Winning Eleven 97</TitleViewTxt>
-                        <Heart/>
+                        {
+                            isMod? <ModEdit source={require("../../assets/pencil.png")}/> : <Heart/>
+                        }
+                        
                     </TitleView>
 
                     <ProdutoImg source={require("../../assets/pesGrande.png")}/>
@@ -58,4 +64,4 @@ export default function Produto(){
 
         </ProdutoContainer>
     );
-}
+} 

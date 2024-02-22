@@ -106,7 +106,7 @@ export const ProdutoButton1 = styled.Pressable`
     justify-content: center;
     background-color: ${global.colors.purple};
 `;
-
+ 
 export const ProdutoButton2 = styled.Pressable`
     width: 215px;
     height: 32px;
@@ -160,5 +160,11 @@ export const CommentInput = styled.TextInput`
     width: 307px;
     height: 100px;
     border-radius: 5px;
+    padding-left: 10px;
     background-color: ${global.colors.green};
+`;
+
+export const ModEdit = styled.Image`
+    width: 24px;
+    height: 24px;
 `;
