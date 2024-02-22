@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { global } from "../../globalStyle";
 
-export const ProdutoContainer = styled.View`
+export const ProdutoContainer = styled.ScrollView`
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@ export const ProdutoContainer = styled.View`
 export const TopProduto = styled.View`
     
 `;
-
+ 
 export const MidProduto = styled.View`
     display: flex;
     flex-direction: column;
@@ -95,6 +95,7 @@ export const CommentView = styled.View`
     gap: 10px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 `;
 
 export const ProdutoButton1 = styled.Pressable`
