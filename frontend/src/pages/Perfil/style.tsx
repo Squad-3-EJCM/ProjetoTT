@@ -6,16 +6,16 @@ export const PerfilContainer = styled.View`
     display: flex;
     background-color: ${global.colors.black};
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 80px;
 `;
 
 export const TopPerfil = styled.View`
     display: flex;
     flex-direction: row;
-    align-self: flex-start;
-    justify-content: flex-start;
+    align-self: center;
+    justify-content: space-between;
+    width: 430px;
+    margin-top: 40px;
 `;
 
 export const MidPerfil = styled.View`
@@ -103,4 +103,9 @@ export const ButtonImage2 = styled.Image`
     height: 24px;
 `;
 
+export const ModImg = styled.Image`
+    width: 110px;
+    height: 24px;
+    margin-right: 15px;
+`;
 

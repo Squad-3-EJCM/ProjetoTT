@@ -14,10 +14,10 @@ export const CommentTopView = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 10px;
 `;
-
+ 
 export const UserFoto = styled.Image`
     width: 30px;
     height: 30px;
@@ -42,4 +42,18 @@ export const Comments = styled.Text`
     align-self: center;
     justify-content: center;
     margin-left: 35px;
+`;
+
+export const UserView = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+`;
+
+export const ModFix = styled.Image`
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
 `;

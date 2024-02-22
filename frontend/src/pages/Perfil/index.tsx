@@ -1,18 +1,21 @@
-import React from "react";
-import { BotaoPerfil1, BotaoPerfil2, ButtonImage, FotoPerfil, InnerButton, Menu, MidPerfil, Name, PerfilContainer, TextButton, TextButton2, TextButton3, TopPerfil } from "./style";
+import React, { useContext } from "react";
+import { BotaoPerfil1, BotaoPerfil2, ButtonImage, FotoPerfil, InnerButton, Menu, MidPerfil, ModImg, Name, PerfilContainer, TextButton, TextButton2, TextButton3, TopPerfil } from "./style";
+import { ModContext } from "../../context/moderatorContext";
 
 export default function Perfil(){
+    const {isMod} = useContext(ModContext); 
     return(
         <PerfilContainer>
             <TopPerfil>
                 <Menu source={require('../../assets/Menu.png')}/>
+                <ModImg source={require('../../assets/Moderador.png')} style={{display: `${isMod? 'flex':'none'}`}}/>
             </TopPerfil>
 
             <MidPerfil>
                 <FotoPerfil source={require('../../assets/Foto de perfil grande.png')}/>
 
                 <Name>Leonardo de Barros Fernandes</Name>
-
+ 
                 <BotaoPerfil1>
                     <TextButton>E-mail</TextButton>
                     <InnerButton>

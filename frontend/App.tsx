@@ -1,5 +1,6 @@
 import {useFonts} from 'expo-font';
 import { Text } from 'react-native';
+import { ModProvider } from './src/context/moderatorContext';
 
 import Cadastro from './src/pages/Cadastro';
 import Carrinho from './src/pages/Carrinho';
@@ -25,6 +26,6 @@ export default function App() {
 
 
   return (
-    <Home/>
+    <ModProvider><Produto/></ModProvider>
   );
 }
