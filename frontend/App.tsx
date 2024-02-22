@@ -25,6 +25,6 @@ export default function App() {
 
 
   return (
-    <NewPost/>
+    <Home/>
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { global } from '../../globalStyle';
 
-export const ProductHomeContainer = styled.View `
+export const ProductHomeContainer = styled.Pressable `
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +10,7 @@ export const ProductHomeContainer = styled.View `
   height: 143px;
   border-radius: 5px;
   background-color: ${global.colors.purple};
+  margin-bottom: 30px;
 `;
 
 export const ProductHomeJogo = styled.Image`
