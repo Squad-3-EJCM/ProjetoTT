@@ -63,6 +63,8 @@ export const NewPostInput1 = styled.TextInput`
     height: 49px;
     border-radius: 20px;
     background-color: ${global.colors.purple};
+    padding-left: 10px;
+    color: #ffffff66;
 `;
 
 export const NewPostInput2 = styled.TextInput`
@@ -74,6 +76,8 @@ export const NewPostInput3 = styled.TextInput`
     height: 167px;
     background-color: ${global.colors.purple};
     border-radius: 20px;
+    padding-left: 10px;
+    color: #ffffff66;
 `;
 
 export const NewPostTitle = styled.Text`
