@@ -44,6 +44,8 @@ async function updateUser(request:Request, response:Response) {
   }
 }
 
+// Não há método destroy porque não havia a opção de deletar usuários na prototipagem
+
 export {
   createUser,
   readUser,
