@@ -12,6 +12,7 @@ import Login from './src/pages/Login';
 import NewPost from './src/pages/NewPost';
 import Perfil from './src/pages/Perfil';
 import Posts from './src/pages/Posts';
+import Produto from './src/pages/Produto';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,6 +24,6 @@ export default function App() {
 
 
   return (
-    <Compras/>
+    <Produto/>
   );
 }
