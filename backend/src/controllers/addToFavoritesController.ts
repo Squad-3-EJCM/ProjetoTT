@@ -5,7 +5,7 @@ import { Request, Response } from 'express';
  
 async function createFavorite(request:Request, response:Response) {
   try {
-    const favorite = await prisma.favorite.create(
+    const favorite = await prisma.addToFavorites.create(
       {data: request.body}
     )
     response.status(201).json(favorite);
@@ -17,7 +17,7 @@ async function createFavorite(request:Request, response:Response) {
  
 async function readFavorite(response:Response) {
   try {
-    const favorite = await prisma.favorite.findMany()
+    const favorite = await prisma.addToFavorites.findMany()
     response.status(200).json(favorite);
   }
   catch(error) {
@@ -28,7 +28,7 @@ async function readFavorite(response:Response) {
 async function updateFavorite(request:Request, response:Response) {
   const {id} = request.params;
   try {
-    const favorite = await prisma.favorite.update(
+    const favorite = await prisma.addToFavorites.update(
       {
         data: request.body,
         where: {id: Number(id)}
@@ -44,7 +44,7 @@ async function updateFavorite(request:Request, response:Response) {
 async function destroyFavorite(request:Request, response:Response) {
   const {id} = request.params;
   try {
-    const favorite = await prisma.favorite.delete(
+    const favorite = await prisma.addToFavorites.delete(
       {where: {id: Number(id)}}
     )
     response.status(200).json(favorite);
@@ -54,7 +54,7 @@ async function destroyFavorite(request:Request, response:Response) {
   }
 }
  
-export {
+module.exports = {
   createFavorite,
   readFavorite,
   updateFavorite,

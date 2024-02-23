@@ -16,10 +16,10 @@ async function createUser(request:Request, response:Response) {
 }
 
 async function readUser(request:Request, response:Response) {
-  const {id} = request.params;
+  const {username}=request.body
   try {
     const user = await prisma.user.findUnique(
-      {where: {id: String(id)}}
+      {where: {username: username}}
     )
     response.status(200).json(user);
   }
@@ -29,12 +29,12 @@ async function readUser(request:Request, response:Response) {
 }
 
 async function updateUser(request:Request, response:Response) {
-  const {id} = request.params;
+  const {username,email,password,oldUsername}=request.body
   try {
     const user = await prisma.user.update(
       {
-        data: request.body,
-        where: {id: String(id)}
+        data: {"username":username,"email":email,"password":password},
+        where: {username: oldUsername}
       }
     )
     response.status(200).json(user);
@@ -46,7 +46,7 @@ async function updateUser(request:Request, response:Response) {
 
 // Não há método destroy porque não havia a opção de deletar usuários na prototipagem
 
-export {
+module.exports =  {
   createUser,
   readUser,
   updateUser

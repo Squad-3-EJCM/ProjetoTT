@@ -5,7 +5,7 @@ import { Request, Response } from 'express';
  
 async function createCart(request:Request, response:Response) {
   try {
-    const cart = await prisma.cart.create(
+    const cart = await prisma.addToCart.create(
       {data: request.body}
     )
     response.status(201).json(cart);
@@ -17,7 +17,7 @@ async function createCart(request:Request, response:Response) {
  
 async function readCart(response:Response) {
   try {
-    const cart = await prisma.cart.findMany()
+    const cart = await prisma.addToCart.findMany()
     response.status(200).json(cart);
   }
   catch(error) {
@@ -28,7 +28,7 @@ async function readCart(response:Response) {
 async function updateCart(request:Request, response:Response) {
   const {id} = request.params;
   try {
-    const cart = await prisma.cart.update(
+    const cart = await prisma.addToCart.update(
       {
         data: request.body,
         where: {id: Number(id)}
@@ -44,7 +44,7 @@ async function updateCart(request:Request, response:Response) {
 async function destroyCart(request:Request, response:Response) {
   const {id} = request.params;
   try {
-    const cart = await prisma.cart.delete(
+    const cart = await prisma.addToCart.delete(
       {where: {id: Number(id)}}
     )
     response.status(200).json(cart);
@@ -54,7 +54,7 @@ async function destroyCart(request:Request, response:Response) {
   }
 }
  
-export {
+module.exports = {
   createCart,
   readCart,
   updateCart,

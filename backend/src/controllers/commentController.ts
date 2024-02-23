@@ -19,7 +19,7 @@ async function readComment(request:Request, response:Response) {
   const {id} = request.params;
   try {
     const comment = await prisma.comment.findUnique(
-      {where: {id: Number(id)}}
+      {where: {commentId: Number(id)}}
     )
     response.status(200).json(comment);
   }
@@ -34,7 +34,7 @@ async function updateComment(request:Request, response:Response) {
     const comment = await prisma.comment.update(
       {
         data: request.body,
-        where: {id: Number(id)}
+        where: {commentId: Number(id)}
       }
     )
     response.status(200).json(comment);
@@ -48,7 +48,7 @@ async function destroyComment(request:Request, response:Response) {
   const {id} = request.params;
   try {
     const comment = await prisma.comment.delete(
-      {where: {id: Number(id)}}
+      {where: {commentId: Number(id)}}
     )
     response.status(200).json(comment);
   }
@@ -57,7 +57,7 @@ async function destroyComment(request:Request, response:Response) {
   }
 }
  
-export {
+module.exports =  {
   createComment,
   readComment,
   updateComment,
