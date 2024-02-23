@@ -10,7 +10,7 @@ export const ComprasConatiner = styled.View`
 `;
 
 export const TopCompras = styled.View`
-    
+    z-index: 2;
 `;
 
 export const MidCompras = styled.View`

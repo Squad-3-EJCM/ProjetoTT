@@ -10,6 +10,7 @@ export const FavoritosContainer = styled.View`
 `;
 
 export const TopFavoritos = styled.View`
+    z-index: 2;
 `;
 
 export const LogoFavoritos = styled.View`

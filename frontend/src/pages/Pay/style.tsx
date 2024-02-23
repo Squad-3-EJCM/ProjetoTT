@@ -10,7 +10,7 @@ export const PayContainer = styled.View`
 `;
 
 export const TopPay = styled.View`
-
+    z-index: 2;
 `;
 
 export const MidPay = styled.View`

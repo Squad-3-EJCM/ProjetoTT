@@ -10,7 +10,7 @@ export const NewPostContainer = styled.View`
 ` ;
 
 export const TopNewPost = styled.View`
-
+    z-index: 2;
 `;
 
 export const MidNewPost = styled.View`

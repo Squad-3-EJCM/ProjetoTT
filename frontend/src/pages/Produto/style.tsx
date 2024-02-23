@@ -10,7 +10,7 @@ export const ProdutoContainer = styled.ScrollView`
 `;
 
 export const TopProduto = styled.View`
-    
+    z-index: 2;
 `;
  
 export const MidProduto = styled.View`

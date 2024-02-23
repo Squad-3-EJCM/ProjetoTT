@@ -1,5 +1,6 @@
 import {useFonts} from 'expo-font';
 import { Text } from 'react-native';
+import Menu from './src/components/Menu';
 import { ModProvider } from './src/context/moderatorContext';
 
 import Cadastro from './src/pages/Cadastro';
