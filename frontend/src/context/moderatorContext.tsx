@@ -8,7 +8,7 @@ type ModProp ={
 export const ModContext = createContext<ModProp>({isMod: false, showMod: () => {}});
 
 export const ModProvider : React.FC<{ children: React.ReactNode }> = ( {children} ) => {
-    const [isMod, setIsMod] = useState<boolean>(true);
+    const [isMod, setIsMod] = useState<boolean>(false);
     console.log(isMod);
     function showMod(mod: boolean){
         setIsMod(mod);

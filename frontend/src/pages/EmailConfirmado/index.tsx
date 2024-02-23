@@ -1,6 +1,8 @@
 import { BotaoTexto2, Container, Container2, Logo, Title, Message, Botao2 } from "../ConfirmarEmail/style";
+import { useNavigation } from "@react-navigation/native";
 
 export default function EmailConfirmado(){
+    const navigation = useNavigation();
     return(
         <Container>
             <Logo source={require("../../assets/Logo.png")}/>
@@ -10,7 +12,7 @@ export default function EmailConfirmado(){
             </Container2>
 
             
-            <Botao2><BotaoTexto2>Email confirmado</BotaoTexto2></Botao2>
+            <Botao2 onPress={()=>navigation.navigate('Login' as never)}><BotaoTexto2>Email confirmado</BotaoTexto2></Botao2>
             
         </Container>
     );

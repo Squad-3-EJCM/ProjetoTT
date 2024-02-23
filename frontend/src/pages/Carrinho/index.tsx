@@ -3,8 +3,11 @@ import GameCard from "../../components/GameCard";
 import TopHome from "../../components/TopHome";
 import CheckBox from "../../components/Checkbox";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 
 export default function Carrinho(){
+    const navigation = useNavigation();
     return(
         <CarrinhoContainer>
             <TopCarrinho>
@@ -17,20 +20,20 @@ export default function Carrinho(){
             <MidCarrinho>
                 <GameCart>
                     <CheckBox/>
-                    <GameCard GameUrl={"gta.jpg"} Name={"GTA I"} Price={"50,00"}/>
+                    <Pressable onPress={()=>navigation.navigate('Produto' as never)}><GameCard GameUrl={"gta.jpg"} Name={"GTA I"} Price={"50,00"}/></Pressable>
                 </GameCart>
 
                 <GameCart>
                     <CheckBox/>
-                    <GameCard GameUrl={"black.jpg"} Name={"Black"} Price={"30,00"}/>
+                    <Pressable onPress={()=>navigation.navigate('Produto' as never)}><GameCard GameUrl={"pes97.jpg"} Name={"PES 97"} Price={"25,00"}/></Pressable>
                 </GameCart>
 
                 <GameCart>
                     <CheckBox/>
-                    <GameCard GameUrl={"sonic.jpg"} Name={"Sonic 2"} Price={"37,00"}/>
+                    <Pressable onPress={()=>navigation.navigate('Produto' as never)}><GameCard GameUrl={"sonic.jpg"} Name={"Sonic 2"} Price={"37,00"}/></Pressable>
                 </GameCart>
 
-                <PayButton>
+                <PayButton onPress={()=>navigation.navigate('Pay' as never)}>
                     <PayButtonText>Finalizar Pagamento</PayButtonText>
                 </PayButton>
 

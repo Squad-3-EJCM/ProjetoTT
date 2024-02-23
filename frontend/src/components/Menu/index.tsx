@@ -1,9 +1,11 @@
 import { BotMenu, IconStart, MenuAllContainer, MenuBotText, MenuButton, MenuConatiner, MenuIcon, MenuLogo, MenuTxt, MidMenu, TopMenu } from "./style";
 import { Animated, Pressable, View } from "react-native";
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function Menu(){
-
+    const navigation = useNavigation();
     const [open, setOpen] = useState(false);
     const [tamanho] = useState(new Animated.Value(-205));
 
@@ -16,10 +18,7 @@ export default function Menu(){
                     duration: 500, useNativeDriver:true
                 }
             ).start(() => {setOpen(false)});
-
-            //setOpen(false);
-
-            
+  
         }
         else {
             Animated.timing(
@@ -52,27 +51,27 @@ export default function Menu(){
 
                     <MidMenu>
 
-                        <MenuButton>
+                        <MenuButton onPress={()=>navigation.navigate('Home' as never)}>
                             <MenuIcon source={require('../../assets/pixel_home.png')}/>
                             <MenuTxt>Home</MenuTxt>
                         </MenuButton>
 
-                        <MenuButton>
+                        <MenuButton onPress={()=>navigation.navigate('Carrinho' as never)}>
                             <MenuIcon source={require('../../assets/pixel_cart.png')}/>
                             <MenuTxt>Carrinho</MenuTxt>
                         </MenuButton>
 
-                        <MenuButton>
+                        <MenuButton onPress={()=>navigation.navigate('Favoritos' as never)}>
                             <MenuIcon source={require('../../assets/tabler_heart.png')}/>
                             <MenuTxt>Favoritos</MenuTxt>
                         </MenuButton>
 
-                        <MenuButton>
+                        <MenuButton onPress={()=>navigation.navigate('Compras' as never)}>
                             <MenuIcon source={require('../../assets/pixelarticons_gift.png')}/>
                             <MenuTxt>Meus Pedidos</MenuTxt>
                         </MenuButton>
 
-                        <MenuButton>
+                        <MenuButton onPress={()=>navigation.navigate('Post' as never)}>
                             <MenuIcon source={require('../../assets/pixel_gamepad.png')}/>
                             <MenuTxt>Meus Produtos</MenuTxt>
                         </MenuButton>
