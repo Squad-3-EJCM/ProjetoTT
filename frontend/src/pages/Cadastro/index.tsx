@@ -2,6 +2,7 @@ import { Botao2, BotaoTexto2, CheckboxText, ContainerCadastro, ContainerCadastro
 import {useFonts} from 'expo-font'
 import CheckBox from '../../components/Checkbox';
 import {useForm, Controller} from 'react-hook-form';
+import { useNavigation } from "@react-navigation/native";
 
 interface FormData{
   email: string;
@@ -10,6 +11,8 @@ interface FormData{
 }
 
 export default function Cadastro() {
+
+  const navigation = useNavigation();
 
   const {control, handleSubmit, getValues} = useForm<FormData>();
   const onSubmit = (data: FormData) => {
@@ -99,7 +102,7 @@ export default function Cadastro() {
         </ContainerCadastro3>
         
   
-        <Botao2 onPress={handleSubmit(onSubmit)}>
+        <Botao2 onPress={()=>{handleSubmit(onSubmit); navigation.navigate('ConfirmarEmail' as never)}}>
           <BotaoTexto2>Finalizar Cadastro</BotaoTexto2>
         </Botao2>
       </ContainerCadastro>

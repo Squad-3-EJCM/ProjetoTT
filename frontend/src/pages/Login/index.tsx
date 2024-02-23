@@ -2,6 +2,7 @@ import { Botao2, BotaoTexto2, Email, Input, Logo, Senha } from '../Cadastro/styl
 import { Botao, BotaoTexto, ContainerLogin,ContainerLogin2, TextoVisitante } from './style';
 import { Pressable } from 'react-native';
 import {useForm, Controller} from 'react-hook-form';
+import { useNavigation } from "@react-navigation/native";
 
 interface FormData{
   email: string;
@@ -10,7 +11,7 @@ interface FormData{
 
 export default function Login() {
 
-
+  const navigation = useNavigation();
   const {control, handleSubmit} = useForm<FormData>();
   const onSubmit = (data: FormData) => {
     console.log(data)
@@ -63,15 +64,15 @@ export default function Login() {
           /> 
       </ContainerLogin2>
 
-      <Botao onPress={handleSubmit(onSubmit)}>
+      <Botao onPress={()=>{handleSubmit(onSubmit); navigation.navigate('Home' as never)}}>
         <BotaoTexto>Login</BotaoTexto>
       </Botao>
 
-      <Botao2>
+      <Botao2 onPress={()=>navigation.navigate('Cadastro' as never)}>
         <BotaoTexto2>Cadastrar-se</BotaoTexto2>
       </Botao2>
 
-      <Pressable>
+      <Pressable onPress={()=>navigation.navigate('Home' as never)}>
         <TextoVisitante>Entrar como visitante</TextoVisitante>
       </Pressable>
     </ContainerLogin>

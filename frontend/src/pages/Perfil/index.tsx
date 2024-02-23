@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { BotaoPerfil1, BotaoPerfil2, ButtonImage, FotoPerfil, InnerButton, MidPerfil, ModImg, Name, PerfilContainer, TextButton, TextButton2, TextButton3, TopPerfil } from "./style";
 import { ModContext } from "../../context/moderatorContext";
 import Menu from "../../components/Menu";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Perfil(){
+    const navigation = useNavigation();
     const {isMod} = useContext(ModContext); 
     return(
         <PerfilContainer>
@@ -49,7 +51,7 @@ export default function Perfil(){
                     </InnerButton>
                 </BotaoPerfil1>
 
-                <BotaoPerfil2>
+                <BotaoPerfil2 onPress={()=>navigation.navigate('Post' as never)}>
                     <TextButton3>Minhas Postagens</TextButton3>
                     <ButtonImage source={require('../../assets/maiorPreto.png')}/>
                 </BotaoPerfil2>

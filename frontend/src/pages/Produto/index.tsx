@@ -4,8 +4,10 @@ import Comment from "../../components/Comments";
 import Heart from "../../components/Heart";
 import { ModContext } from "../../context/moderatorContext";
 import { useContext } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Produto(){
+    const navigation = useNavigation();
     const {isMod} = useContext(ModContext);
     return(
         <ProdutoContainer>
@@ -35,10 +37,10 @@ export default function Produto(){
                 </DescricaoView>
 
                 <ButtonView>
-                    <ProdutoButton1>
+                    <ProdutoButton1 onPress={()=>navigation.navigate('Pay' as never)}>
                         <Button1Text>Finalizar Compra</Button1Text>
                     </ProdutoButton1>
-                    <ProdutoButton2>
+                    <ProdutoButton2 onPress={()=>navigation.navigate('Carrinho' as never)}>
                         <Button2Text>Adicionar ao Carrinho</Button2Text>
                     </ProdutoButton2>
                 </ButtonView>

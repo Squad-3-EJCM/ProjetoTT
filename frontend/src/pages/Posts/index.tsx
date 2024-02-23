@@ -1,7 +1,8 @@
 import TopHome from "../../components/TopHome";
 import { MidPosts, NewPost, NewPostImg, NewPostText, PostsConatiner, PostView, PostViewBot, PostViewBotImg, PostViewImg, PostViewName, PostViewNamePrice, PostViewNotes, PostViewPrice, PostViewTop, TopPosts } from "./style";
-
+import { useNavigation } from "@react-navigation/native";
 export default function Posts(){
+    const navigation = useNavigation();
     return(
         <PostsConatiner>
             <TopPosts>
@@ -10,7 +11,7 @@ export default function Posts(){
 
             <MidPosts>
 
-                <NewPost>
+                <NewPost onPress={()=>navigation.navigate('NewPost' as never)}>
                     <NewPostImg source={require("../../assets/plus-line.png")}/>
                     <NewPostText>Nova Publicação</NewPostText>
                 </NewPost>
