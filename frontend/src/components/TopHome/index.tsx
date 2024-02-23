@@ -1,10 +1,11 @@
 
-import {ContainerTopHome, FotodePerfil, Lupa, Menu, Pesquisa, Search} from './style';
+import Menu from '../Menu';
+import {ContainerTopHome, FotodePerfil, Lupa, Pesquisa, Search} from './style';
 
 export default function TopHome() {
     return(
         <ContainerTopHome>
-            <Menu source={require("../../assets/Menu.png")}/>
+            <Menu/>
             <Search>
                 <Pesquisa placeholder='Pesquisar'></Pesquisa>
                 <Lupa source={require("../../assets/Vector.png")}/>

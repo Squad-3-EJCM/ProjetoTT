@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import { BotaoPerfil1, BotaoPerfil2, ButtonImage, FotoPerfil, InnerButton, Menu, MidPerfil, ModImg, Name, PerfilContainer, TextButton, TextButton2, TextButton3, TopPerfil } from "./style";
+import { BotaoPerfil1, BotaoPerfil2, ButtonImage, FotoPerfil, InnerButton, MidPerfil, ModImg, Name, PerfilContainer, TextButton, TextButton2, TextButton3, TopPerfil } from "./style";
 import { ModContext } from "../../context/moderatorContext";
+import Menu from "../../components/Menu";
 
 export default function Perfil(){
     const {isMod} = useContext(ModContext); 
     return(
         <PerfilContainer>
             <TopPerfil>
-                <Menu source={require('../../assets/Menu.png')}/>
+                <Menu/>
                 <ModImg source={require('../../assets/Moderador.png')} style={{display: `${isMod? 'flex':'none'}`}}/>
             </TopPerfil>
 

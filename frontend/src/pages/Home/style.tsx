@@ -11,6 +11,7 @@ export const ContainerHome = styled.ScrollView`
  
 export const TopPage = styled.View`
     margin-bottom: 20px;
+    z-index: 2;
 `;
 
 export const MidPage = styled.View`
@@ -52,4 +53,5 @@ export const LogoMenor = styled.Image`
 
 export const GameList = (styled.FlatList`
     width: 370px;
+    z-index: -2;
 ` as unknown) as typeof FlatList;

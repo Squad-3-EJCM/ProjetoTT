@@ -5,12 +5,10 @@ export const ContainerTopHome = styled.View `
     flex-direction: row;
     justify-content: space-between;
     align-items:center;
+    z-index: 2;
 `;
 
-export const Menu = styled.Image`
-    width: 24px;
-    height: 24px;
-`;
+
 
 export const Search = styled.View`
     display: flex;

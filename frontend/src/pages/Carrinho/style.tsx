@@ -10,6 +10,7 @@ export const CarrinhoContainer = styled.View`
 `;
 
 export const TopCarrinho = styled.View`
+    z-index: 2;
 `;
 
 export const LogoCarrinho = styled.View`

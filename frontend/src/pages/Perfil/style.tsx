@@ -16,6 +16,7 @@ export const TopPerfil = styled.View`
     justify-content: space-between;
     width: 430px;
     margin-top: 40px;
+    z-index: 2;
 `;
 
 export const MidPerfil = styled.View`
